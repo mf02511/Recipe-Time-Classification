@@ -1,4 +1,4 @@
-# Recipe-Ratings-Model 🥘
+# Recipe Ratings Model 🥘
 
 **Authors**: Ashley Ho & Mizuho Fukuda
 <br/>
