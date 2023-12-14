@@ -45,7 +45,7 @@ The following confusion matrix displays the baseline model's prediction on the t
 
 ![baseline confusion matrix](/assets/cm_base.png)
 
-Performance Metrics:
+#### **Performance Metrics**
 
 |               |   Training |   **Testing** |
 |:--------------|-----------:|--------------:|
@@ -71,9 +71,9 @@ We performed a 5-fold Grid Search Cross Validation in order to find the best hyp
 
 With the newly fitted model, we get a confusion matrix as shown below for the test set:
 
-![baseline confusion matrix](/assets/cm_final.png)
+![final confusion matrix](/assets/cm_final.png)
 
-Performance Metrics:
+#### **Performance Metrics**
 
 |               |   Training |   **Testing** |
 |:--------------|-----------:|--------------:|
