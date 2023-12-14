@@ -12,9 +12,9 @@
 **GitHub**: <https://github.com/mf02511/Recipe-Time-Classification>
 <br/>
 
-**EDA**: <https://a1ho.github.io/Recipe-Ratings-Analysis/>
+_Our exploratory data analysis on this dataset can be found [here](https://a1ho.github.io/Recipe-Ratings-Analysis/)_
 
-## Problem Identification
+## Framing the Problem
 In this study, we explore the following prediction problem: 
 > Predict whether or not a recipe is quick using a binary classification model.
 >
@@ -63,8 +63,6 @@ For the final model, we included the features `n_reviews` and `reviews` in addit
 <iframe src="assets/calories.html" width=800 height=600 frameBorder=0></iframe>
 
 <iframe src="assets/n_reviews.html" width=800 height=600 frameBorder=0></iframe>
-
-*Note: We did not have to remove any features since the Random Forest Classifier is not affected by irrelevant features*
 
 ### Grid Search Cross Validation for Hyperparameters
 We performed a 5-fold Grid Search Cross Validation in order to find the best hyperparameters for the Random Forest Classifier. We focused on the `max_depth` and `min_samples_split` hyperparameters for our search since these can affect the model's ability to generalize to unseen data. We decided to use the default `n_estimators=100` since we found after a grid search (not included in final notebook) that the optimal `n_estimators` is around 100 regardless. The Grid Search CV found the optimal hyperparameters to be `max_depth=110` and `min_samples_split=0.05`. Notice that min_samples_split is a proportion, rather than the number of samples since we want the hyperparameter to also be able to generalize to any size data.
