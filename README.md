@@ -38,9 +38,6 @@ The main metric we use to evaluate our model performance is precision. We note t
 
 #### **Known at Time of Prediction**
 The `'minutes'` column is provided by the person who uploads the recipe. Thus, a user can view all the other information for that recipe on the website in order to predict the quickness of a recipe if it so happens that the `'minutes'` column is missing, or the person who uploads the recipe chooses not to upload the `'minutes'`. If the recipe has not been tried and rated/reivewed at least once before, then a user would not have access to the `'mean_rating'`, and `'review'` (which we grouped into a single string and added to the `recipes` dataset, as mentioned above) information. Otherwise, generally all other information in the `recipes` dataset will be known at the time of prediction and `'mean_rating'`, and `'review'` information will also be known if at least one other user has rated and reviewed the recipe before. 
-### Response Variable
-The response variable is `'minutes'`. As mentioned above, we are interested in the quickness of recipes, and we binarize the `'minutes'` column into 0 and 1 values, where 0 indicates non-quick recipes and 1 indicates quick recipes. We choose this to be our response variable because the amount of time a recipe takes to make important to people when choosing which recipes to try. 
-
 
 ## Baseline Model
 We chose the Random Forest Classifier as the model for this classification task. The model includes three quantitative features: `n_ingredients`, `mean_rating`, and `calories`. In the pipeline, we first transform all features columns with using the Standard Scaler transformer. Since we do not have any categorical features for this baseline model, this quantitative scaling is the only transformation that was necessary in this case. We felt the Standard Scaler transformation was most appropriate since the feature columns have drastically different scales i.e. the `calories` column contains values in the hundreds while `n_ingredients` and `mean_rating` contain much smaller values. The difference in scale can lead to the `calories` feature having significantly larger weight than others, thus, transforming the features using Standard Scaler would produce a better model. The baseline Random Forest Classifier used default hyperparameters, namely, `max_depth=None`, `min_samples_split=2`, and `n_estimators=100`.
@@ -50,7 +47,7 @@ The following confusion matrix displays the baseline model's prediction on the t
 
 ![baseline confusion matrix](/assets/cm_base.png)
 
-Performance Metrics:
+#### **Performance Metrics**
 
 |               |   Training |   **Testing** |
 |:--------------|-----------:|--------------:|
@@ -76,9 +73,9 @@ We performed a 5-fold Grid Search Cross Validation in order to find the best hyp
 
 With the newly fitted model, we get a confusion matrix as shown below for the test set:
 
-![baseline confusion matrix](/assets/cm_final.png)
+![final confusion matrix](/assets/cm_final.png)
 
-Performance Metrics:
+#### **Performance Metrics**
 
 |               |   Training |   **Testing** |
 |:--------------|-----------:|--------------:|
